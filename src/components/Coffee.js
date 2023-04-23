@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 
-function Merch(props) {
+function Coffee(props) {
 
   return (
     <React.Fragment>
-      <div onClick={() => props.whenMerchClicked(props.id)}>
+      <div onClick={() => props.whenCoffeeClicked(props.id)}>
         <h3><em>{props.name} - ${props.price}</em></h3>
         <p><ul><li>{props.description}</li></ul></p>
         <p>Left in stock: {props.quantity}</p>
@@ -18,15 +18,15 @@ function Merch(props) {
   );
 }
 
-Merch.propTypes = { //name, price, desc, quantity
+Coffee.propTypes = { //name, price, desc, quantity
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
   quantity: PropTypes.number,
   id: PropTypes.string,
-  // whenMerchClicked: PropTypes.func,
+  // whenCoffeeClicked: PropTypes.func,
   // onRestock: PropTypes.func
 };
 
 
-export default Merch;
+export default Coffee;

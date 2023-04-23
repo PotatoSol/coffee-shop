@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { v4 } from 'uuid';
 
-function NewMerchForm(props) {
+function NewCoffeeForm(props) {
 
-  function handleNewMerchFormSubmission(event) {
+  function handleNewCoffeeFormSubmission(event) {
     event.preventDefault();
-    props.onNewMerchCreation({
+    props.onNewCoffeeCreation({
       name: event.target.name.value,
       price: event.target.price.value,
       description: event.target.description.value,
@@ -16,12 +16,12 @@ function NewMerchForm(props) {
   }
   return (
     <React.Fragment>
-      <form onSubmit={handleNewMerchFormSubmission}>
-        <p>Merch:  
+      <form onSubmit={handleNewCoffeeFormSubmission}>
+        <p>Coffee:  
         <input
           type='text'
           name='name'
-          placeholder='Name of Merch' /><br></br></p>
+          placeholder='Name of Coffee' /><br></br></p>
         <input
           type='number'
           name='price'
@@ -33,14 +33,14 @@ function NewMerchForm(props) {
           type='number'
           name='quantity'
           placeholder='Quantity' /><br></br>
-        <button type='submit'>Submit Merch!</button>
+        <button type='submit'>Submit Coffee!</button>
       </form>
     </React.Fragment>
   );
 }
 
-NewMerchForm.propTypes = {
-  onNewMerchCreation: PropTypes.func
+NewCoffeeForm.propTypes = {
+  onNewCoffeeCreation: PropTypes.func
 };
 
-export default NewMerchForm;
+export default NewCoffeeForm;
