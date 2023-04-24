@@ -46,37 +46,16 @@ class CoffeeControl extends React.Component {
     console.log(newCoffee);
         if (newCoffeeInCart && 
       newCoffeeInList && newCoffeeInList.quantity >= 1){ //Check if in cart at all AND that there are enough in stock -> subtract from stock, add to cart
-      console.log("found in stock and in cart");
 
-      // let coffeeIndex = newMainCoffeeCart.indexOf(newMainCoffeeCart.filter(coffee => coffee.id === newCoffee.id)[0])
-      // console.log(newCoffeeInCart.quantity);
       newCoffeeInCart.quantity += 1;
       newCoffeeInList.quantity -=1;
 
-    
-
-      // let coffeeListIndex = newMainCoffeeList.indexOf(newMainCoffeeList.filter(coffee => coffee.id === newCoffee.id)[0]);
-      // newMainCoffeeList[coffeeListIndex].quantity += 1;
-      
-      // newMainCoffeeList.filter(coffee => coffee.id === newCoffee.id)[0].quantity -= 1; //sets the quantity of the stock to that of the cart + 1
-
-      console.log(newMainCoffeeList);
-      console.log(newMainCoffeeCart);
-      // newMainCoffeeCart[coffeeIndex] = newCoffeeInCart;
-      //newMainCoffeeCart.filter(coffee => coffee.id === newCoffee.id)[0] = newCoffeeInCart;//copies over the cart for the stock value 
-
-      // newMainCoffeeList.filter(coffee => coffee.id === newCoffee.id)[0].quantity = quantityStorage - 1;
-
     } else if (newCoffeeInList.quantity >= 1){ //Not in cart, but in stock
       let initialCoffeetoAdd = {...newCoffee, quantity:1};
-      console.log("found in stock, but not in cart");
-      // newMainCoffeeList.filter(coffee => coffee.id === newCoffee.id)[0].quantity = 1;
-      // console.log(newMainCoffeeList.filter(coffee => coffee.id === newCoffee.id)[0].quantity);
       newMainCoffeeCart.push(initialCoffeetoAdd);
       newCoffeeInList.quantity -= 1;
 
     } else { //not enough in stock
-      console.log('not enough in stock');
       //some error message to show that there aren't any in stock to add to cart
     }
 
