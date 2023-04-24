@@ -18,14 +18,14 @@ function Coffee(props) {
   );
 }
 
-Coffee.propTypes = { //name, price, desc, quantity
+Coffee.propTypes = { //name, origin, price, roast
   name: PropTypes.string.isRequired,
+  origin: PropTypes.string.isRequired, //new
   price: PropTypes.number.isRequired,
+  roast: PropTypes.string.isRequired, //new
   description: PropTypes.string.isRequired,
   quantity: PropTypes.number,
   id: PropTypes.string,
-  // whenCoffeeClicked: PropTypes.func,
-  // onRestock: PropTypes.func
 };
 
 

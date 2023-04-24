@@ -41,7 +41,6 @@ class CoffeeControl extends React.Component {
     let newMainCoffeeList = [...this.state.mainCoffeeList];
     let newCoffeeInCart = newMainCoffeeCart.filter(coffee => coffee.id === newCoffee.id)[0];
     let newCoffeeInList = newMainCoffeeList.filter(coffee => coffee.id === newCoffee.id)[0];
-    // let quantityStorage = newMainCoffeeList.filter(coffee => coffee.id === newCoffee.id)[0].quantity;
     //first find if in cart, if is, then increment quantity, else, put in cart
     console.log(newCoffee);
         if (newCoffeeInCart && 
