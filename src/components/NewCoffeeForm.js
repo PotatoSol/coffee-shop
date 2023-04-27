@@ -8,9 +8,9 @@ function NewCoffeeForm(props) {
     event.preventDefault();
     props.onNewCoffeeCreation({
       name: event.target.name.value,
-      price: event.target.price.value,
+      price: parseFloat(event.target.price.value),
       description: event.target.description.value,
-      quantity: event.target.quantity.value,
+      quantity: parseInt(event.target.quantity.value),
       origin: event.target.origin.value,
       roast: event.target.roast.value,
       id: v4()
@@ -34,7 +34,7 @@ function NewCoffeeForm(props) {
           type='text'
           name='roast'
           placeholder='Roast' /><br></br></p>
-        <input
+        <input step=".01"
           type='number'
           name='price'
           placeholder='Price' /><br></br>
